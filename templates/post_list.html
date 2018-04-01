@@ -1,15 +1,20 @@
-{% extends 'base.html' %} {% block title %} Posts {% endblock %} {% block content %} {% for post in object_list %}
-<div class="card mb-4">
+<!-- template/post_list.html -->
+{% extends 'base.html' %} {% block title %}Posts{% endblock %} {% block content %} {% for post in object_list %}
+<div class="card">
     <div class="card-header">
-        <span class="font-weight-bold">{{post.author}}</span> &middot; <span class="text-muted">{{post.date}}</span>
+        <span class="font-weight-bold">{{ post.author }}</span> &middot; <span c\ lass="text-muted">{{ post.date }}</span>
     </div>
     <div class="card-body">
-        {{post.message}}
+        <p>{{ post.message }}</p>
+        <a href="{% url 'post_edit' post.pk %}">Edit</a> | <a href="{% url 'post\
+_delete' post.pk %}">Delete</a>
     </div>
-    <div class="card-footer text-center text-muted">
-        <a href="{%url 'post_edit' post.pk%}">Edit</a> |
-        <a href="{%url 'post_delete' post.pk%}">Delete</a>
+    <div class="card-footer">
+        {% for comment in post.comment_set.all %}
+        <p>
+            <span class="font-weight-bold">{{ comment.author }} &middot;</span> {{ comment }}
+        </p>
+        {% endfor %}
     </div>
 </div>
-
-{% endfor %} {% endblock %}
+<br /> {% endfor %} {% endblock content %}
