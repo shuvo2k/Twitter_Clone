@@ -13,5 +13,6 @@
 
 ```
 
-![Home Page](https://github.com/shuvo2k/Twitter_Clone/tree/master/README_IMAGES/home.png)
-![Message Page](https://github.com/shuvo2k/Twitter_Clone/tree/master/README_IMAGES/message.png)
+![](/README_IMAGES/home.png)
+
+![](/README_IMAGES/message.png)
