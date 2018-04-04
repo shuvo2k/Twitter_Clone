@@ -9,6 +9,8 @@
 
 > source activate envname
 
+>python manage.py migrate
+
 > python manage.py runserver
 
 ```
